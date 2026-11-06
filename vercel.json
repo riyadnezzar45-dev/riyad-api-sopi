@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "api/*.py", "use": "@vercel/python" }
-  ],
+  "functions": {
+    "api/add.py": {
+      "runtime": "@vercel/python@4.3.0",
+      "excludeFiles": "{api/_core.py,config.json}"
+    },
+    "api/remove.py": {
+      "runtime": "@vercel/python@4.3.0",
+      "excludeFiles": "{api/_core.py,config.json}"
+    }
+  },
   "routes": [
     { "src": "/api/add", "dest": "api/add.py" },
     { "src": "/api/remove", "dest": "api/remove.py" }
