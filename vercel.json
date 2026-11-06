@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/*.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/api/add", "dest": "api/add.py" },
+    { "src": "/api/remove", "dest": "api/remove.py" }
+  ]
+}
